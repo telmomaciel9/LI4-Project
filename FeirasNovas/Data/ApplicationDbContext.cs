@@ -1,4 +1,4 @@
-﻿using FeirasNovas.Models;
+using FeirasNovas.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +12,7 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
     public DbSet<Product> Produto { get; set; }
+    public DbSet<Sales> Venda { get; set; }
+    public DbSet<FeirasNovas.Models.Feiras> Feiras { get; set; } = default!;
 }
 

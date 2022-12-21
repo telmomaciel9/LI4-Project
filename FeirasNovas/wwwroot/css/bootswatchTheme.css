@@ -6067,6 +6067,7 @@ textarea.form-control-lg {
         margin: calc(var(--bs-modal-footer-gap) * 0.5);
     }
 
+
 @media (min-width: 576px) {
     .modal {
         --bs-modal-margin: 1.75rem;
