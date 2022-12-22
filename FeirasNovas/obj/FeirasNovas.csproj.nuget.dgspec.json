@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/FeirasNovas.csproj": {}
+    "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {}
   },
   "projects": {
-    "/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/FeirasNovas.csproj": {
+    "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/FeirasNovas.csproj",
+        "projectUniqueName": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
         "projectName": "FeirasNovas",
-        "projectPath": "/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/FeirasNovas.csproj",
+        "projectPath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
         "packagesPath": "/Users/ricardoaraujo/.nuget/packages/",
-        "outputPath": "/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/obj/",
+        "outputPath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ricardoaraujo/.nuget/NuGet/NuGet.Config"

@@ -9,69 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FeirasNovas
 build_property.RootNamespace = FeirasNovas
-build_property.ProjectDir = /Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/
+build_property.ProjectDir = /Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas
+build_property.MSBuildProjectDirectory = /Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Areas/Identity/Pages/_ViewStart.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/autho/Welcome.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/autho/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvYXV0aG8vV2VsY29tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Feiras/Create.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Feiras/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmVpcmFzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Feiras/Delete.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Feiras/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmVpcmFzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Feiras/Details.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Feiras/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmVpcmFzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Feiras/Edit.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Feiras/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmVpcmFzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Feiras/Index.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Feiras/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmVpcmFzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Home/Index.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Home/Privacy.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Shared/Error.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Home/teste.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS90ZXN0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Shared/_LoginPartial.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/_ViewImports.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/_ViewStart.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/Views/Shared/_Layout.cshtml]
+[/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ts8vpfet8y

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ivrai2R937B3cUmoRLsfNvb7R/jHcfZLwp7xH5SkXCQUAglhR2glLQMZZT8KHnTa7tAtjkcp1cJ9Uc8NIwD46Q==",
+  "dgSpecHash": "pH5uJ+u6VNVsoiFE8aOoSmNv6x5VhscyQIrGdidlTV4BZfhpCEHDUY9/V6PkGGl8L39G4tBOWClWzklSilNmdw==",
   "success": true,
-  "projectFilePath": "/Users/ricardoaraujo/Projects/FeirasNovas/FeirasNovas/FeirasNovas.csproj",
+  "projectFilePath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
   "expectedPackageFiles": [
     "/Users/ricardoaraujo/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/ricardoaraujo/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
