@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {}
+    "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\FeirasNovas.csproj": {}
   },
   "projects": {
-    "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {
+    "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\FeirasNovas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
+        "projectUniqueName": "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\FeirasNovas.csproj",
         "projectName": "FeirasNovas",
-        "projectPath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
-        "packagesPath": "/Users/ricardoaraujo/.nuget/packages/",
-        "outputPath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/obj/",
+        "projectPath": "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\FeirasNovas.csproj",
+        "packagesPath": "C:\\Users\\Bia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ricardoaraujo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Bia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,19 +42,19 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation": {
               "target": "Package",
@@ -60,15 +62,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": {
               "target": "Package",
@@ -76,7 +80,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.2, )"
             }
           },
           "imports": [
@@ -98,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
