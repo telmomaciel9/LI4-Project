@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using FeirasNovas.Services;
 using FeirasNovas.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -17,13 +18,17 @@ namespace FeirasNovas.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IFileService _fileService;
 
         public IndexModel(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            IFileService fileService
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            this._fileService = fileService;
         }
 
         /// <summary>
@@ -59,6 +64,14 @@ namespace FeirasNovas.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+            public string Name { get; set; }
+            public string Address { get; set; }
+            [Display(Name = "Username")]
+            public string UserName { get; set; }
+
+            public string ProfilePic { get; set; }
+            public IFormFile ImageFile { get; set; }
+
         }
 
         private async Task LoadAsync(ApplicationUser user)
@@ -70,7 +83,11 @@ namespace FeirasNovas.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Name = user.Name,
+                Address = user.Address,
+                UserName = user.UserName,
+                ProfilePic = user.ProfilePic
             };
         }
 
@@ -108,6 +125,40 @@ namespace FeirasNovas.Areas.Identity.Pages.Account.Manage
                 {
                     StatusMessage = "Unexpected error when trying to set phone number.";
                     return RedirectToPage();
+                }
+            }
+
+            if (Input.Name != user.Name)
+            {
+                user.Name = Input.Name;
+                await _userManager.UpdateAsync(user);
+
+            }
+
+            if (Input.UserName != user.UserName)
+            {
+                user.UserName = Input.UserName;
+                await _userManager.UpdateAsync(user);
+
+            }
+
+            if (Input.Address != user.Address)
+            {
+                user.Address = Input.Address;
+                await _userManager.UpdateAsync(user);
+
+            }
+
+            //image
+            if (Input.ImageFile != null)
+            {
+                var result = _fileService.SaveImage(Input.ImageFile);
+                if (result.Item1 == 1)
+                {
+                    var oldImage = user.ProfilePic;
+                    user.ProfilePic = result.Item2;
+                    await _userManager.UpdateAsync(user);
+                    var deleteResult = _fileService.DeleteImage(oldImage);
                 }
             }
 
