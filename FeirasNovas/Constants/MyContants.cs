@@ -2,7 +2,11 @@
 namespace FeirasNovas.Constants
 {
 
-	publ
+	public enum Roles {
+		Admin,
+		Cliente,
+		Vendedor
+	}
 	public class MyContants
 	{
 

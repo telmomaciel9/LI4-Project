@@ -13,6 +13,17 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     }
     public DbSet<Product> Produto { get; set; }
     public DbSet<Sales> Venda { get; set; }
-    public DbSet<Feiras> Feiras { get; set; } = default!;
+    public DbSet<Feiras> Feiras { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.Entity<Feiras>()
+            .HasMany(f => f.Vendedores)
+            .WithOne()
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+
 }
 
