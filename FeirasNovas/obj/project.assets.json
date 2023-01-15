@@ -817,7 +817,8 @@
       "Microsoft.CodeAnalysis.Analyzers/3.3.3": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Microsoft.CodeAnalysis.Analyzers.props": {},
+          "build/Microsoft.CodeAnalysis.Analyzers.targets": {}
         }
       },
       "Microsoft.CodeAnalysis.AnalyzerUtilities/3.3.0": {
@@ -13167,6 +13168,7 @@
       "Microsoft.AspNetCore.Identity.UI >= 7.0.2",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 7.0.2",
       "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation >= 2.2.0",
+      "Microsoft.CodeAnalysis.Analyzers >= 3.3.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
@@ -13176,26 +13178,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bia\\.nuget\\packages\\": {}
+    "/Users/telmomaciel9/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\FeirasNovas.csproj",
+      "projectUniqueName": "/Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
       "projectName": "FeirasNovas",
-      "projectPath": "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\FeirasNovas.csproj",
-      "packagesPath": "C:\\Users\\Bia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bia\\Desktop\\ricardoaraujoo\\FeirasNovasLI4\\FeirasNovas\\obj\\",
+      "projectPath": "/Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
+      "packagesPath": "/Users/telmomaciel9/.nuget/packages/",
+      "outputPath": "/Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/telmomaciel9/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13233,6 +13234,12 @@
           "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.CodeAnalysis.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.3.3, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -13280,7 +13287,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

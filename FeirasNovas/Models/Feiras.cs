@@ -16,8 +16,9 @@ namespace FeirasNovas.Models
         [Required]
         public string VenderUsername { get; set; }
 
-        public virtual ICollection<ApplicationUser> Vendedores { get; set; }
-      
+        //Relationship
+        //public List<Product> Products{ get; set; }
+        public List<Feira_Product> Feira_Products { get; set; }
     }
 
 }
