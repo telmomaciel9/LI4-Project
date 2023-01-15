@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "/Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {}
   },
   "projects": {
@@ -15,12 +16,31 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/telmomaciel9/.nuget/NuGet/NuGet.Config"
+=======
+    "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {}
+  },
+  "projects": {
+    "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
+        "projectName": "FeirasNovas",
+        "projectPath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/FeirasNovas.csproj",
+        "packagesPath": "/Users/ricardoaraujo/.nuget/packages/",
+        "outputPath": "/Users/ricardoaraujo/Projects/FeirasNovasLI4/FeirasNovas/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ricardoaraujo/.nuget/NuGet/NuGet.Config"
+>>>>>>> b3f80d55761f5e7dac1a2a5d267adb0f19c70dc4
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+<<<<<<< HEAD
           "/usr/local/share/dotnet/library-packs": {},
+=======
+>>>>>>> b3f80d55761f5e7dac1a2a5d267adb0f19c70dc4
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

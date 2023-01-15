@@ -1844,6 +1844,7 @@ C:/Users/Bia/Desktop/ricardoaraujoo/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/
 C:/Users/Bia/Desktop/ricardoaraujoo/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/FeirasNovas.pdb
 C:/Users/Bia/Desktop/ricardoaraujoo/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/FeirasNovas.genruntimeconfig.cache
 C:/Users/Bia/Desktop/ricardoaraujoo/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/ref/FeirasNovas.dll
+<<<<<<< HEAD
 /Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/FeirasNovas.dll
 /Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/refint/FeirasNovas.dll
 /Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/FeirasNovas.pdb
@@ -2458,3 +2459,5 @@ C:/Users/Bia/Desktop/ricardoaraujoo/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/
 /Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/FeirasNovas.csproj.CopyComplete
 /Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/FeirasNovas.genruntimeconfig.cache
 /Users/telmomaciel9/Documents/FeirasNovasLI4/FeirasNovas/obj/Debug/net7.0/ref/FeirasNovas.dll
+=======
+>>>>>>> b3f80d55761f5e7dac1a2a5d267adb0f19c70dc4

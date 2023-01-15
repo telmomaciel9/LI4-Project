@@ -15,6 +15,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Sales> Venda { get; set; }
     public DbSet<Feiras> Feiras { get; set; }
 
+<<<<<<< HEAD
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<Feira_Product>().HasKey(am => new
@@ -42,5 +43,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Feira_Product> Feira_Products { get; set; }
 
 
+=======
+>>>>>>> b3f80d55761f5e7dac1a2a5d267adb0f19c70dc4
 }
 
