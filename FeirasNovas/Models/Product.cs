@@ -17,6 +17,9 @@ namespace FeirasNovas.Models
         public int Stock { get; set; }
         [DisplayName("Descrição")]
         public string Descricao { get; set; }
+
+        //Relationships
+        public List<Feira_Product> Feira_Products { get; set; }
     }
 }
 

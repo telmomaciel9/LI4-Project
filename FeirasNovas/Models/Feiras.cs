@@ -15,6 +15,10 @@ namespace FeirasNovas.Models
         public string Categoria { get; set; }
         public List<string> UserNames { get; set; }
 
+        //Relationship
+        //public List<Product> Products{ get; set; }
+        public List<Feira_Product> Feira_Products { get; set; }
+
     }
 
 }
