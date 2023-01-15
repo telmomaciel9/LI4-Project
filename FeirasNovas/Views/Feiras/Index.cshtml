@@ -4,32 +4,59 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.idFeira">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.idFeira">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.idFeira">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+@if (TempData["sucess"] != null) {
+        <h2>@TempData["sucess"]</h2>
+ }
+
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Markets</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Feiras" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp;  Create New Category
+            </a>
+
+        </div>
+    </div>
+    @*<br />*@
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Category Name
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="90%">
+
+                        <a asp-action="Edit" asp-route-id="@obj.idFeira"
+                           class="btn btn-primary mxn-2"> <i class="bi bi-shop-window"></i> @obj.Categoria</a>
+
+
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-action="Edit" asp-route-id="@obj.idFeira"
+                               class="btn btn-primary mxn-2"><i class="bi bi-pencil-square"></i>Edit</a>
+
+                            <a asp-action="Delete" asp-route-id="@obj.idFeira"
+                               class="btn btn-danger mxn-2"><i class="bi bi-trash-fill"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

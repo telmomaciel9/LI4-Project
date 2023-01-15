@@ -45,9 +45,6 @@ namespace FeirasNovas.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("FeirasidFeira")
-                        .HasColumnType("int");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -90,8 +87,6 @@ namespace FeirasNovas.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FeirasidFeira");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -103,6 +98,21 @@ namespace FeirasNovas.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("FeirasNovas.Models.Feira_Product", b =>
+                {
+                    b.Property<int>("idFeira")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idProduto")
+                        .HasColumnType("int");
+
+                    b.HasKey("idFeira", "idProduto");
+
+                    b.HasIndex("idProduto");
+
+                    b.ToTable("Feira_Product");
+                });
+
             modelBuilder.Entity("FeirasNovas.Models.Feiras", b =>
                 {
                     b.Property<int>("idFeira")
@@ -112,10 +122,6 @@ namespace FeirasNovas.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idFeira"));
 
                     b.Property<string>("Categoria")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VenderUsername")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -152,29 +158,21 @@ namespace FeirasNovas.Migrations
 
                     b.HasKey("idProduto");
 
-                    b.ToTable("Produto");
+                    b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("FeirasNovas.Models.Sales", b =>
+            modelBuilder.Entity("FeirasNovas.Models.VendedorL", b =>
                 {
-                    b.Property<int>("idVenda")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("VendedorIdL")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idVenda"));
-
-                    b.Property<string>("Fatura")
+                    b.Property<string>("VendedorNameL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.HasKey("VendedorIdL");
 
-                    b.HasKey("idVenda");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Venda");
+                    b.ToTable("VendedorL");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -310,23 +308,34 @@ namespace FeirasNovas.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("FeirasNovas.Data.ApplicationUser", b =>
+            modelBuilder.Entity("FeirasNovas.Models.Feira_Product", b =>
                 {
-                    b.HasOne("FeirasNovas.Models.Feiras", null)
-                        .WithMany("Vendedores")
-                        .HasForeignKey("FeirasidFeira")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("FeirasNovas.Models.Sales", b =>
-                {
-                    b.HasOne("FeirasNovas.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
+                    b.HasOne("FeirasNovas.Models.Feiras", "Feiras")
+                        .WithMany("Feira_Products")
+                        .HasForeignKey("idFeira")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FeirasNovas.Models.Product", "Product")
+                        .WithMany("Feira_Products")
+                        .HasForeignKey("idProduto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Feiras");
+
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("FeirasNovas.Models.VendedorL", b =>
+                {
+                    b.HasOne("FeirasNovas.Models.Feiras", "Feiras")
+                        .WithMany("VendedorIdL")
+                        .HasForeignKey("VendedorIdL")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Feiras");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -382,7 +391,14 @@ namespace FeirasNovas.Migrations
 
             modelBuilder.Entity("FeirasNovas.Models.Feiras", b =>
                 {
-                    b.Navigation("Vendedores");
+                    b.Navigation("Feira_Products");
+
+                    b.Navigation("VendedorIdL");
+                });
+
+            modelBuilder.Entity("FeirasNovas.Models.Product", b =>
+                {
+                    b.Navigation("Feira_Products");
                 });
 #pragma warning restore 612, 618
         }

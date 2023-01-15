@@ -151,7 +151,7 @@ namespace FeirasNovas.Areas.Identity.Pages.Account.Manage
 
             //image
             if (Input.ImageFile != null)
-            {
+            { 
                 var result = _fileService.SaveImage(Input.ImageFile);
                 if (result.Item1 == 1)
                 {

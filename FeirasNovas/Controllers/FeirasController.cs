@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FeirasNovas.Data;
 using FeirasNovas.Models;
+using FeirasNovas.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace FeirasNovas.Controllers
 {
     public class FeirasController : Controller
     {
         private readonly ApplicationDbContext _context;
+       
 
         public FeirasController(ApplicationDbContext context)
         {
             _context = context;
+    
         }
 
         // GET: Feiras
@@ -51,20 +55,19 @@ namespace FeirasNovas.Controllers
             return View();
         }
 
-        // POST: Feiras/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idFeira,Categoria")] Feiras feiras)
+        public async Task<IActionResult> Create(Feiras feira)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(feiras);
+                _context.Feiras.Add(feira);
                 await _context.SaveChangesAsync();
+                TempData["sucess"] = "Category created successfully";
                 return RedirectToAction(nameof(Index));
+
             }
-            return View(feiras);
+            return View(feira);
         }
 
         // GET: Feiras/Edit/5
@@ -80,6 +83,7 @@ namespace FeirasNovas.Controllers
             {
                 return NotFound();
             }
+
             return View(feiras);
         }
 
@@ -100,6 +104,7 @@ namespace FeirasNovas.Controllers
                 try
                 {
                     _context.Update(feiras);
+                    TempData["sucess"] = "Category updated successfully";
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -148,10 +153,13 @@ namespace FeirasNovas.Controllers
             var feiras = await _context.Feiras.FindAsync(id);
             if (feiras != null)
             {
+
                 _context.Feiras.Remove(feiras);
+
             }
             
             await _context.SaveChangesAsync();
+            TempData["sucess"] = "Category deleted successfully";
             return RedirectToAction(nameof(Index));
         }
 
