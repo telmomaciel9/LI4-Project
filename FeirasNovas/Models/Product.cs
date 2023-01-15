@@ -12,6 +12,7 @@ namespace FeirasNovas.Models
         public string Name { get; set;}
         [Required]
         public double  Preco { get; set; }
+        public string Imagem { get; set; }
         [Required]
         public int Stock { get; set; }
         [DisplayName("Descrição")]
