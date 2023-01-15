@@ -40,6 +40,7 @@
           "Microsoft.AspNetCore.Identity.UI": "7.0.2",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "7.0.2",
           "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation": "2.2.0",
+          "Microsoft.CodeAnalysis.Analyzers": "3.3.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.2",

@@ -11,9 +11,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
-    public DbSet<Product> Produto { get; set; }
-    public DbSet<Sales> Venda { get; set; }
-    public DbSet<Feiras> Feiras { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -29,17 +26,15 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         base.OnModelCreating(builder);
 
 
-        //builder.Entity<Feiras>()
-        //    .HasMany(f => f.Vendedores)
-        //    .WithOne()
-        //    .OnDelete(DeleteBehavior.Cascade);
+
     }
 
-    public DbSet<Feiras> Feira { get; set; }
+    public DbSet<VendedorL> VendedorL { get; set; }
+    public DbSet<Feiras> Feiras { get; set; }
 
-    public DbSet<Product> Products { get; set; }
+    public DbSet<Product> Product { get; set; }
 
-    public DbSet<Feira_Product> Feira_Products { get; set; }
+    public DbSet<Feira_Product> Feira_Product { get; set; }
 
 
 
