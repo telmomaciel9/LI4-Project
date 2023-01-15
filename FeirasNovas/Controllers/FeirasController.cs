@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FeirasNovas.Data;
 using FeirasNovas.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace FeirasNovas.Controllers
 {
     public class FeirasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public FeirasController(ApplicationDbContext context)
+        public FeirasController(ApplicationDbContext context, UserManager<ApplicationUser> user)
         {
             _context = context;
+            _userManager = user;
+
         }
 
         // GET: Feiras
@@ -159,5 +163,26 @@ namespace FeirasNovas.Controllers
         {
           return (_context.Feiras?.Any(e => e.idFeira == id)).GetValueOrDefault();
         }
+
+        public async Task<List<ApplicationUser>> GetUsersByFeira(Feiras feira)
+        {
+            var users = new List<ApplicationUser>();
+            foreach (var username in feira.UserNames)
+            {
+                var user = await _userManager.FindByNameAsync(username);
+                users.Add(user);
+            }
+            return users;
+        }
+
+        public async Task AddUserToFeira(Feiras feira, string username)
+        {
+            feira.UserNames.Add(username);
+            await _context.SaveChangesAsync();
+        }
+
     }
+
+
+
 }

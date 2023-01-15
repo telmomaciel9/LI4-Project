@@ -45,6 +45,9 @@ namespace FeirasNovas.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("FeirasidFeira")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -86,6 +89,8 @@ namespace FeirasNovas.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FeirasidFeira");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -305,6 +310,14 @@ namespace FeirasNovas.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("FeirasNovas.Data.ApplicationUser", b =>
+                {
+                    b.HasOne("FeirasNovas.Models.Feiras", null)
+                        .WithMany("Vendedores")
+                        .HasForeignKey("FeirasidFeira")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("FeirasNovas.Models.Sales", b =>
                 {
                     b.HasOne("FeirasNovas.Models.Product", "Product")
@@ -365,6 +378,11 @@ namespace FeirasNovas.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FeirasNovas.Models.Feiras", b =>
+                {
+                    b.Navigation("Vendedores");
                 });
 #pragma warning restore 612, 618
         }

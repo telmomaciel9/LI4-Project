@@ -1,4 +1,5 @@
 ﻿using System;
+using FeirasNovas.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace FeirasNovas.Data
@@ -9,6 +10,6 @@ namespace FeirasNovas.Data
 		public String Address { get; set; }
 		public String? ProfilePic { get; set; }
 
-	}
+    }
 }
 

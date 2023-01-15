@@ -13,11 +13,8 @@ namespace FeirasNovas.Models
         public int idFeira { get; set; }
         [Required]
         public string Categoria { get; set; }
-        [Required]
-        public string VenderUsername { get; set; }
+        public List<string> UserNames { get; set; }
 
-        public virtual ICollection<ApplicationUser> Vendedores { get; set; }
-      
     }
 
 }
