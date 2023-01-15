@@ -45,119 +45,97 @@ namespace FeirasNovas.Controllers
             return View(product);
         }
 
-        // GET: Products/Create
+        // GET: Feiras/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("idProduto,Name,Preco,Imagem,Stock,Descricao")] Product product)
+        public async Task<IActionResult> Create(Product products)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                _context.Product.Add(products);
                 await _context.SaveChangesAsync();
+                TempData["success"] = "Product created successfully";
                 return RedirectToAction(nameof(Index));
+
             }
-            return View(product);
+            return View(products);
         }
 
-        // GET: Products/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        //GET
+        public IActionResult Edit(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var p = _context.Product.Find(id);
+
+
+            if (p == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return View(product);
+            return View(p);
         }
 
-        // POST: Products/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idProduto,Name,Preco,Imagem,Stock,Descricao")] Product product)
+        public IActionResult Edit(Product obj)
         {
-            if (id != product.idProduto)
+            if (obj.idProduto < 0)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProductExists(product.idProduto))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Product.Update(obj);
+                _context.SaveChanges();
+                TempData["success"] = "Product updated successfully";
+                return RedirectToAction("Index");
             }
-            return View(product);
+            return View(obj);
         }
 
-        // GET: Products/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var P = _context.Product.Find(id);
+
+
+            if (P == null)
             {
                 return NotFound();
             }
 
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.idProduto == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
+            return View(P);
         }
 
-        // POST: Products/Delete/5
+        //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeletePOST(int? id)
         {
-            if (_context.Product == null)
+            var obj = _context.Product.Find(id);
+            if (obj == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Product'  is null.");
+                return NotFound();
             }
-            var product = await _context.Product.FindAsync(id);
-            if (product != null)
-            {
-                _context.Product.Remove(product);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
 
-        private bool ProductExists(int id)
-        {
-          return (_context.Product?.Any(e => e.idProduto == id)).GetValueOrDefault();
+            _context.Product.Remove(obj);
+            _context.SaveChanges();
+            TempData["success"] = "Product deleted successfully";
+            return RedirectToAction("Index");
+
         }
     }
 }

@@ -20,6 +20,13 @@ namespace FeirasNovas.Models
 
         //Relationships
         public List<Feira_Product> Feira_Products { get; set; }
+
+        public Product()
+        {
+           
+            Feira_Products = new List<Feira_Product>();
+
+        }
     }
 }
 
