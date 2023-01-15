@@ -15,20 +15,20 @@ namespace FeirasNovas.Controllers
     public class FeirasController : Controller
     {
         private readonly ApplicationDbContext _context;
-       
+
 
         public FeirasController(ApplicationDbContext context)
         {
             _context = context;
-    
+
         }
 
         // GET: Feiras
         public async Task<IActionResult> Index()
         {
-              return _context.Feiras != null ? 
-                          View(await _context.Feiras.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Feiras'  is null.");
+            return _context.Feiras != null ?
+                        View(await _context.Feiras.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Feiras'  is null.");
         }
 
         // GET: Feiras/Details/5
@@ -63,22 +63,23 @@ namespace FeirasNovas.Controllers
             {
                 _context.Feiras.Add(feira);
                 await _context.SaveChangesAsync();
-                TempData["sucess"] = "Category created successfully";
+                TempData["success"] = "Category created successfully";
                 return RedirectToAction(nameof(Index));
 
             }
             return View(feira);
         }
 
-        // GET: Feiras/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        //GET
+        public IActionResult Edit(int? id)
         {
-            if (id == null || _context.Feiras == null)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
+            var feiras = _context.Feiras.Find(id);
 
-            var feiras = await _context.Feiras.FindAsync(id);
+
             if (feiras == null)
             {
                 return NotFound();
@@ -87,52 +88,34 @@ namespace FeirasNovas.Controllers
             return View(feiras);
         }
 
-        // POST: Feiras/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idFeira,Categoria")] Feiras feiras)
+        public IActionResult Edit(Feiras obj)
         {
-            if (id != feiras.idFeira)
+            if (obj.idFeira < 0)
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(feiras);
-                    TempData["sucess"] = "Category updated successfully";
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FeirasExists(feiras.idFeira))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Feiras.Update(obj);
+                _context.SaveChanges();
+                TempData["success"] = "Market updated successfully";
+                return RedirectToAction("Index");
             }
-            return View(feiras);
+            return View(obj);
         }
 
-        // GET: Feiras/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
-            if (id == null || _context.Feiras == null)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
+            var feiras = _context.Feiras.Find(id);
+            
 
-            var feiras = await _context.Feiras
-                .FirstOrDefaultAsync(m => m.idFeira == id);
             if (feiras == null)
             {
                 return NotFound();
@@ -141,31 +124,23 @@ namespace FeirasNovas.Controllers
             return View(feiras);
         }
 
-        // POST: Feiras/Delete/5
+        //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeletePOST(int? id)
         {
-            if (_context.Feiras == null)
+            var obj = _context.Feiras.Find(id);
+            if (obj == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Feiras'  is null.");
+                return NotFound();
             }
-            var feiras = await _context.Feiras.FindAsync(id);
-            if (feiras != null)
-            {
 
-                _context.Feiras.Remove(feiras);
+            _context.Feiras.Remove(obj);
+            _context.SaveChanges();
+            TempData["success"] = "Market deleted successfully";
+            return RedirectToAction("Index");
 
-            }
-            
-            await _context.SaveChangesAsync();
-            TempData["sucess"] = "Category deleted successfully";
-            return RedirectToAction(nameof(Index));
         }
 
-        private bool FeirasExists(int id)
-        {
-          return (_context.Feiras?.Any(e => e.idFeira == id)).GetValueOrDefault();
-        }
-    }
+    }   
 }
