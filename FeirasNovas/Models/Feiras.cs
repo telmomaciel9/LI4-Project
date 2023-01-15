@@ -13,7 +13,7 @@ namespace FeirasNovas.Models
         public int idFeira { get; set; }
         [Required]
         public string Categoria { get; set; }
-        public List<VendedorL> UsersIdL { get; set; }
+        public List<VendedorL> VendedorIdL { get; set; }
 
         //Relationship
         //public List<Product> Products{ get; set; }
