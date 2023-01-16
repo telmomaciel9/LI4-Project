@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FeirasNovas.Data;
 using FeirasNovas.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FeirasNovas.Controllers
 {
@@ -20,6 +21,7 @@ namespace FeirasNovas.Controllers
         }
 
         // GET: Products
+        [Authorize]
         public async Task<IActionResult> Index()
         {
               return _context.Product != null ? 
@@ -46,6 +48,7 @@ namespace FeirasNovas.Controllers
         }
 
         // GET: Feiras/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -67,6 +70,7 @@ namespace FeirasNovas.Controllers
         }
 
         //GET
+        [Authorize]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -87,6 +91,7 @@ namespace FeirasNovas.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public IActionResult Edit(Product obj)
         {
             if (obj.idProduto < 0)
@@ -103,6 +108,7 @@ namespace FeirasNovas.Controllers
             return View(obj);
         }
 
+        [Authorize]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)

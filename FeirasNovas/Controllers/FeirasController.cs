@@ -9,6 +9,7 @@ using FeirasNovas.Data;
 using FeirasNovas.Models;
 using FeirasNovas.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FeirasNovas.Controllers
 {
@@ -24,6 +25,7 @@ namespace FeirasNovas.Controllers
         }
 
         // GET: Feiras
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return _context.Feiras != null ?
@@ -48,7 +50,7 @@ namespace FeirasNovas.Controllers
 
             return View(feiras);
         }
-
+        [Authorize]
         // GET: Feiras/Create
         public IActionResult Create()
         {
@@ -71,6 +73,7 @@ namespace FeirasNovas.Controllers
         }
 
         //GET
+        [Authorize]
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -106,7 +109,7 @@ namespace FeirasNovas.Controllers
             }
             return View(obj);
         }
-
+        [Authorize]
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
